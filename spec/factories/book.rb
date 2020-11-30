@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :book do
     title { Faker::Book.title }
-    created_by { Faker::Book.author }
-    category_id nil
+    author { Faker::Book.author }
+    category_id { nil }
   end
 end

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Books API', type: :request do
+RSpec.describe 'Books', type: :request do
   # initialize test data
   let!(:books) { create_list(:book, 10) }
   let(:book_id) { books.first.id }
@@ -78,6 +78,7 @@ RSpec.describe 'Books API', type: :request do
           .to match(/Validation failed: Created by can't be blank/)
       end
     end
+  end
 
     # Test suite for PUT /books/:id
   describe 'PUT /books/:id' do

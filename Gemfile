@@ -32,6 +32,8 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'hirb'
   gem 'rspec-rails'
+  gem 'rubocop-faker'
+  gem 'rubocop-rspec', require: false
 end
 
 group :development do
