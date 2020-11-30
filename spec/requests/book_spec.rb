@@ -48,4 +48,60 @@ RSpec.describe 'Books API', type: :request do
       end
     end
   end
+
+  # Test suite for POST /books
+  describe 'POST /books' do
+    # valid payload
+    let(:valid_attributes) { { title: 'Learn Elm', author: 'Shelock Holmes' } }
+
+    context 'when the request is valid' do
+      before { post '/books', params: valid_attributes }
+
+      it 'creates a book' do
+        expect(json['title']).to eq('Learn Elm')
+      end
+
+      it 'returns status code 201' do
+        expect(response).to have_http_status(201)
+      end
+    end
+
+    context 'when the request is invalid' do
+      before { post '/books', params: { title: 'Foobar' } }
+
+      it 'returns status code 422' do
+        expect(response).to have_http_status(422)
+      end
+
+      it 'returns a validation failure message' do
+        expect(response.body)
+          .to match(/Validation failed: Created by can't be blank/)
+      end
+    end
+
+    # Test suite for PUT /books/:id
+  describe 'PUT /books/:id' do
+    let(:valid_attributes) { { title: 'React Guidelines' } }
+
+    context 'when the record exists' do
+      before { put "/books/#{book_id}", params: valid_attributes }
+
+      it 'updates the record' do
+        expect(response.body).to be_empty
+      end
+
+      it 'returns status code 204' do
+        expect(response).to have_http_status(204)
+      end
+    end
+  end
+
+  # Test suite for DELETE /books/:id
+  describe 'DELETE /books/:id' do
+    before { delete "/books/#{book_id}" }
+
+    it 'returns status code 204' do
+      expect(response).to have_http_status(204)
+    end
+  end
 end
