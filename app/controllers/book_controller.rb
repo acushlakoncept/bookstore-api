@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 class BookController < ApplicationController
-    before_action :set_book, only: [:show, :update, :destroy]
+  before_action :set_book, only: %i[show update destroy]
 
-    # GET /books
+  # GET /books
   def index
     @books = Book.all
     json_response(@books)
@@ -32,7 +32,6 @@ class BookController < ApplicationController
     head :no_content
   end
 
-  
   private
 
   def book_params

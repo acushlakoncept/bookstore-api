@@ -81,7 +81,7 @@ RSpec.describe 'Books', type: :request do
     end
   end
 
-    # Test suite for PUT /books/:id
+  # Test suite for PUT /books/:id
   describe 'PUT /books/:id' do
     let(:valid_attributes) { { title: 'React Guidelines' } }
 
