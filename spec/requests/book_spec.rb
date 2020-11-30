@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Books', type: :request do
   # initialize test data
+  let!(:category) { create_list(:category, 10) }
   let!(:books) { create_list(:book, 10) }
   let(:book_id) { books.first.id }
 

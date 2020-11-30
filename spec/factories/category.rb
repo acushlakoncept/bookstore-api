@@ -2,6 +2,6 @@
 
 FactoryBot.define do
   factory :category do
-    name { Faker::Book.genre }
+    name { Faker::Book.unique.publisher }
   end
 end
