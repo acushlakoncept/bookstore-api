@@ -38,7 +38,7 @@ module Api::V1
     private
 
     def book_params
-      params.permit(:title, :author)
+      params.permit(:title, :author, :category_id)
     end
 
     def set_book

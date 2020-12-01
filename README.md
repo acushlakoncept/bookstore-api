@@ -22,6 +22,29 @@ Our API will expose the following RESTful endpoints.
 | GET /category             | Get all categories           |
 | GET /category/:id         | Get a category               |
 
+### Example
+
+~~~json
+// POST /api/v1/books
+    {
+        "title": "The Shining",
+        "author": "Stephen King",
+        "category_id": 2
+    }
+
+
+// Results
+
+{
+    "id": 4,
+    "title": "The Shining",
+    "author": "Stephen King",
+    "category_id": 2,
+    "created_at": "2020-12-01T02:55:22.010Z",
+    "updated_at": "2020-12-01T02:55:22.010Z"
+}
+~~~
+
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
