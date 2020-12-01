@@ -9,7 +9,7 @@ module Api::V1
     def index
       @books = Book.includes(:category)
       # json_response(@books)
-      render status: '200', json: @books, include: { category: { only: :name }, message: 'success' }, except: %i[category_id created_at updated_at]
+      render status: '200', json: @books, include: { category: { only: :name } }, except: %i[category_id created_at updated_at]
     end
 
     # POST /books
