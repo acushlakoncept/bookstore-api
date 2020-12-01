@@ -45,6 +45,9 @@ Our API will expose the following RESTful endpoints.
 }
 ~~~
 
+## Live Version
+
+[Live API](https://cush-bookstore-api.herokuapp.com/api/v1/books)
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
@@ -87,6 +90,26 @@ Start server with:
 ```
 
 Open `http://localhost:3000/` in your browser.
+
+### Deploy to a live server
+
+Deploying to a live server like Heroku is easy, make sure you have the necessary credentials setup on your local machine
+
+```bash
+heroku create
+heroku rename app-new-name
+git push heroku $BRANCH_NAME:master 
+```
+if you are already in master branch no need to add $BRANCH_NAME, just use `git push heroku master`
+
+```bash
+heroku run rails db:migrate
+heroku run rails db:seed
+heroku open
+```
+
+Enjoy your newly deployed rails API
+
 
 ### Run tests
 
