@@ -20,7 +20,7 @@ module Api::V1
 
     # GET /books/:id
     def show
-      json_response(@book)
+      render json: @book, include: { category: { only: :name } }, except: %i[category_id created_at updated_at]
     end
 
     # PUT /books/:id
