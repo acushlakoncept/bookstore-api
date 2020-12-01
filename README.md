@@ -1,6 +1,6 @@
 # BOOKSTORE CMS RESTful JSON API
 
-The is a simple restful JSON API for managing bookstore CMS client side application built with Redux and React
+The is a simple restful JSON API for managing [bookstore CMS client](https://github.com/acushlakoncept/bookstore) side application built with Redux and React
 
 ## Built With
 
