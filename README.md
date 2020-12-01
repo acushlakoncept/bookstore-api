@@ -47,7 +47,7 @@ Our API will expose the following RESTful endpoints.
 
 ## Live Version
 
-[Live API](https://cush-bookstore-api.herokuapp.com/api/v1/books)
+[Live API](https://bookstore-api-ud.herokuapp.com/api/v1/books)
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
